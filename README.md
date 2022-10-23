@@ -159,4 +159,13 @@ dns:
 routes:
 - 1.2.3.4
 - 1.2.3.5/32
+
+# Build
+
+```
+set GOOS=linux
+set GOARCH=mips
+set GOMIPS=softfloat
+go build -ldflags="-s -w"
+```
 ```
