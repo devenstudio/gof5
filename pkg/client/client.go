@@ -27,6 +27,7 @@ type Options struct {
 	CACert        string
 	Cert          string
 	Key           string
+	BasePath	  string
 	CloseSession  bool
 	Debug         bool
 	Sel           bool
@@ -63,7 +64,7 @@ func Connect(opts *Options) error {
 	opts.Server = u.Host
 
 	// read config
-	cfg, err := config.ReadConfig(opts.Debug)
+	cfg, err := config.ReadConfig(opts.BasePath, opts.Debug)
 	if err != nil {
 		return err
 	}

@@ -38,6 +38,7 @@ func main() {
 	flag.StringVar(&opts.CACert, "ca-cert", "", "Path to a custom CA certificate")
 	flag.StringVar(&opts.Cert, "cert", "", "Path to a user TLS certificate")
 	flag.StringVar(&opts.Key, "key", "", "Path to a user TLS key")
+	flag.StringVar(&opts.BasePath, "basedir", "", "Path to a basepath")
 	flag.BoolVar(&opts.CloseSession, "close-session", false, "Close HTTPS VPN session on exit")
 	flag.BoolVar(&opts.Debug, "debug", false, "Show debug logs")
 	flag.BoolVar(&opts.Sel, "select", false, "Select a server from available F5 servers")

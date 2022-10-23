@@ -28,7 +28,7 @@ var (
 	supportedDrivers        = []string{"wireguard", "pppd"}
 )
 
-func ReadConfig(debug bool) (*Config, error) {
+func ReadConfig(basePath string, debug bool) (*Config, error) {
 	var err error
 	var usr *user.User
 
@@ -51,7 +51,7 @@ func ReadConfig(debug bool) (*Config, error) {
 			return nil, fmt.Errorf("failed to detect home directory: %s", err)
 		}
 	}
-	configPath := filepath.Join(usr.HomeDir, configDir)
+	configPath := basePath // filepath.Join(usr.HomeDir, configDir)
 
 	var uid, gid int
 	// windows preserves the original user parameters, no need to detect uid/gid
