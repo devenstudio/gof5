@@ -164,8 +164,6 @@ routes:
 
 ```
 set GOOS=linux
-set GOARCH=mips
-set GOMIPS=softfloat
+set GOARCH=mipsle
 go build -ldflags="-s -w"
-```
 ```
